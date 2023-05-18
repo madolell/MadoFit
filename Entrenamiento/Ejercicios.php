@@ -98,18 +98,18 @@ include("../Auxiliares/conecta.php");
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 d-flex align-item-center">
             <div class="col">
                 <div class="card position-relative shadow-sm border-0">
-                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/pecho.jpg" class="card-img-top"
-                            alt="Programa de entrenamiento para principiantes">
+                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/Grupo Muscular/pecho.jpg" class="card-img-top"
+                            alt="Pectorales">
                         <div class="card-body position-absolute bottom-0 start-0 text-light">
-                            <h6 class="card-title">Pecho</h6>
+                            <h6 class="card-title">Pectorales</h6>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="col">
                 <div class="card position-relative shadow-sm border-0">
-                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/espalda.jpg" class="card-img-top"
-                            alt="Programa de entrenamiento para intermedio">
+                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/Grupo Muscular/espalda.jpg" class="card-img-top"
+                            alt="Espalda">
                         <div class="card-body position-absolute bottom-0 start-0 text-light">
                             <h6 class="card-title">Espalda</h6>
                         </div>
@@ -118,8 +118,8 @@ include("../Auxiliares/conecta.php");
             </div>
             <div class="col">
                 <div class="card position-relative shadow-sm border-0">
-                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/pierna.jpg" class="card-img-top"
-                            alt="Programa de entrenamiento de fuerza">
+                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/Grupo Muscular/pierna.jpg" class="card-img-top"
+                            alt="Pierna">
                         <div class="card-body position-absolute bottom-0 start-0 text-light">
                             <h6 class="card-title">Pierna</h6>
                         </div>
@@ -128,18 +128,18 @@ include("../Auxiliares/conecta.php");
             </div>
             <div class="col">
                 <div class="card position-relative shadow-sm border-0">
-                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/hombro.jpg" class="card-img-top"
-                            alt="Programa de entrenamiento para pérdida de peso">
+                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/Grupo Muscular/hombro.jpg" class="card-img-top"
+                            alt="Hombros">
                         <div class="card-body position-absolute bottom-0 start-0 text-light">
-                            <h6 class="card-title">Hombro</h6>
+                            <h6 class="card-title">Hombros</h6>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="col">
                 <div class="card position-relative shadow-sm border-0">
-                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/biceps.jpg" class="card-img-top"
-                            alt="Programa de entrenamiento de resistencia">
+                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/Grupo Muscular/biceps.jpg" class="card-img-top"
+                            alt="Bíceps">
                         <div class="card-body position-absolute bottom-0 start-0 text-light">
                             <h6 class="card-title">Bíceps</h6>
                         </div>
@@ -148,8 +148,8 @@ include("../Auxiliares/conecta.php");
             </div>
             <div class="col">
                 <div class="card position-relative shadow-sm border-0">
-                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/triceps.jpg" class="card-img-top"
-                            alt="Programa de entrenamiento de flexibilidad">
+                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/Grupo Muscular/triceps.jpg" class="card-img-top"
+                            alt="Tríceps">
                         <div class="card-body position-absolute bottom-0 start-0 text-light">
                             <h6 class="card-title">Tríceps</h6>
                         </div>
@@ -158,8 +158,8 @@ include("../Auxiliares/conecta.php");
             </div>
             <div class="col">
                 <div class="card position-relative shadow-sm border-0">
-                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/abdominales.jpg" class="card-img-top"
-                            alt="Programa de entrenamiento para principiantes">
+                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/Grupo Muscular/abdominales.jpg" class="card-img-top"
+                            alt="Abdominales">
                         <div class="card-body position-absolute bottom-0 start-0 text-light">
                             <h6 class="card-title">Abdominales</h6>
                         </div>
@@ -168,8 +168,8 @@ include("../Auxiliares/conecta.php");
             </div>
             <div class="col">
                 <div class="card position-relative shadow-sm border-0">
-                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/gemelos.jpg" class="card-img-top"
-                            alt="Programa de entrenamiento para intermedio">
+                    <a href="Guia/Grupo_muscular.php"><img src="../fotos/Grupo Muscular/gemelos.jpg" class="card-img-top"
+                            alt="Gemelos">
                         <div class="card-body position-absolute bottom-0 start-0 text-light">
                             <h6 class="card-title">Gemelos</h6>
                         </div>
