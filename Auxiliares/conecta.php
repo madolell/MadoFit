@@ -1,8 +1,8 @@
 <?php
 $localhost = "localhost";
-$usuario = "root";
-$password = "";
-$database = "ejemplo";
+$usuario = "debianDB";
+$password = "debianDB";
+$database = "MadoFit";
 
 // Conexión con la base de datos
 $conn = new mysqli($localhost, $usuario, $password, $database);

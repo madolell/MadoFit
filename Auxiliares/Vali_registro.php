@@ -24,9 +24,9 @@ if ($_POST) {
 
     // Conexión a la base de datos
     $localhost = 'localhost';
-    $usuario = 'root';
-    $dbPassword = '';
-    $database = 'ejemplo';
+    $usuario = 'debianDB';
+    $dbPassword = 'debianDB';
+    $database = 'MadoFit';
 
     $conexion = mysqli_connect($localhost, $usuario, $dbPassword, $database);
 
