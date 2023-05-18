@@ -121,32 +121,32 @@ if (isset($_SESSION["mensaje"])) {
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column align-items-center p-4">
         <a href="https://www.adidas.es">
-          <img src="fotos/marcas/adidas.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="adidas">
+          <img src="fotos/Marcas/adidas.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="adidas">
         </a>
       </div>
       <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column align-items-center p-4">
         <a href="https://www.asics.com/es/">
-          <img src="fotos/marcas/asics-logo.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="asics">
+          <img src="fotos/Marcas/asics-logo.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="asics">
         </a>
       </div>
       <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column align-items-center p-4">
         <a href="https://www.prozis.com/es/es">
-          <img src="fotos/marcas/prozis.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="prozis">
+          <img src="fotos/Marcas/prozis.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="prozis">
         </a>
       </div>
       <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column align-items-center p-4">
         <a href="https://www.underarmour.es/es-es/">
-          <img src="fotos/marcas/armour.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="armour">
+          <img src="fotos/Marcas/armour.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="armour">
         </a>
       </div>
       <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column align-items-center p-4">
         <a href="https://www.amix.es">
-          <img src="fotos/marcas/LOGO-AMIX.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="amix">
+          <img src="fotos/Marcas/LOGO-AMIX.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="amix">
         </a>
       </div>
       <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column align-items-center p-4">
         <a href="https://www.kappa.es">
-          <img src="fotos/marcas/logo-Kappa.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="kappa">
+          <img src="fotos/Marcas/logo-Kappa.png" width="100" class="img-fluid imagen-blanco-negro imagen-zoom" alt="kappa">
         </a>
       </div>
     </div>
