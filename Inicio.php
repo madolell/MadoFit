@@ -207,7 +207,7 @@ if (isset($_SESSION["mensaje"])) {
             constancia en tus hábitos <br><br>
             <i class="bi bi-forward-fill fs-5"></i> Para todos los <strong>objetivos y niveles</strong>
           </p>
-          <div class="d-flex justify-content-start pt-4">
+          <div class="d-flex justify-content-center align-items-center pt-4">
           <a href="formulario/login.php">
             <button type="button" class="btn btn-primary rounded-5">Comienza hoy</button>
           </a>

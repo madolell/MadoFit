@@ -2,6 +2,51 @@
 session_start();
 include("../../Auxiliares/conecta.php");
 
+// Realiza la conexión a la base de datos (reemplaza los valores con los tuyos)
+$mysqli = new mysqli("localhost", "usuario", "contraseña", "basedatos");
+
+// Verifica si ocurrió algún error en la conexión
+if ($mysqli->connect_error) {
+    die("Error en la conexión: " . $mysqli->connect_error);
+}
+
+// Obtén el valor del parámetro grupoMuscular
+$grupoMuscular = $_GET['grupoMuscular'];
+
+// Prepara la consulta utilizando una sentencia preparada para evitar ataques de inyección SQL
+$sql = "SELECT nombre FROM ejercicios WHERE grupo_muscular = ?";
+
+// Prepara la sentencia
+$stmt = $mysqli->prepare($sql);
+
+// Verifica si ocurrió algún error en la preparación de la sentencia
+if (!$stmt) {
+    die("Error en la preparación de la consulta: " . $mysqli->error);
+}
+
+// Vincula el parámetro y ejecuta la consulta
+$stmt->bind_param("s", $grupoMuscular);
+$stmt->execute();
+
+// Obtiene los resultados de la consulta
+$result = $stmt->get_result();
+
+// Verifica si se encontraron resultados
+if ($result->num_rows > 0) {
+    echo "<h2>Ejercicios de " . $grupoMuscular . "</h2>";
+
+    // Itera sobre los resultados y muestra los nombres de los ejercicios
+    while ($row = $result->fetch_assoc()) {
+        echo "<p>" . $row['nombre'] . "</p>";
+    }
+} else {
+    echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
+}
+
+// Cierra la conexión y libera los recursos
+$stmt->close();
+$mysqli->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -117,18 +162,14 @@ include("../../Auxiliares/conecta.php");
                 <img src="../../fotos/Ejercicios/pecho.png" alt="pecho" class="img-fluid">
             </div>
             <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
-                <h6><a href="Pecho/1.php" class="ejercicio-link">1. Press de banca con barra</a></h6>
-                <h6><a href="Pecho/2.php" class="ejercicio-link">2. Press banca inclinado con mancuernas</a></h6>
-                <h6><a href="Pecho/3.php" class="ejercicio-link">3. Aperturas en máquina Peck Deck o Contractora</a></h6>
-                <h6><a href="Pecho/4.php" class="ejercicio-link">4. Cruce de poleas</a></h6>
-                <h6><a href="Pecho/5.php" class="ejercicio-link">5. Press de banca inclinado con barra</a></h6>
-                <h6><a href="Pecho/6.php" class="ejercicio-link">6. Press de banca con mancuernas</a></h6>
-                <h6><a href="Pecho/7.php" class="ejercicio-link">7. Aperturas con mancuernas</a></h6>
-                <h6><a href="Pecho/8.php" class="ejercicio-link">8. Aperturas Inclinadas con mancuernas</a></h6>
-                <h6><a href="Pecho/9.php" class="ejercicio-link">9. Press de banca en máquina sentado</a></h6>
-                <h6><a href="Pecho/10.php" class="ejercicio-link">10. Press de banca declinado con barra</a></h6>
-                <h6><a href="Pecho/11.php" class="ejercicio-link">11. Press de banca declinado con mancuernas</a></h6>
-                <h6><a href="Pecho/12.php" class="ejercicio-link">12. Flexiones</a></h6>
+                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">1. </a></h6>
+                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">2. </a></h6>
+                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">3. </a></h6>
+                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">4. </a></h6>
+                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">5. </a></h6>
+                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">6. </a></h6>
+                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">7. </a></h6>
+                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">8. </a></h6>
             </div>
         </div>
     </div>

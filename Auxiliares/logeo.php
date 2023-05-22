@@ -24,16 +24,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          $_SESSION["email"] = $usuario["email"];    
          $_SESSION["nombre"] = $usuario["nombre"];
 
-        // Redireccionar al usuario a su página de inicio
-        header("Location: ../Inicio.php");
-        exit();
+        // Verificar si es el usuario administrador
+        if ($usuario["email"] === 'admin') {
+            // Redireccionar al usuario administrador a admin.php
+            header("Location: admin.php");
+            exit();
+        } else {
+            // Redireccionar al usuario a su página de inicio
+            header("Location: ../Inicio.php");
+            exit();
+        }
     } else {
         // Credenciales incorrectas, agregar mensaje de error
         $_SESSION["mensajeError"] = "El usuario es incorrecto";
 
-         // Redireccionar al usuario a la página de inicio de sesión
-         header("Location: ../formulario/login.php");
-         exit();
+        // Redireccionar al usuario a la página de inicio de sesión
+        header("Location: ../formulario/login.php");
+        exit();
     }
 
     $stmt->close(); // Cerrar la consulta preparada
