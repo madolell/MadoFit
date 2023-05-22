@@ -172,7 +172,7 @@ $mysqli->close();
                     $nombreEjercicio = $row['nombre'];
 
                     // Muestra el nombre del ejercicio en una columna de la fila
-                    echo '<div class="col-12 pt-3"><h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $nombreEjercicio . '</a></h6></div>';
+                    echo '<div class="col-12 pt-3"><h6><a href="../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $nombreEjercicio . '</a></h6></div>';
                 }
 
                 echo '</div>'; // Fin de la fila
