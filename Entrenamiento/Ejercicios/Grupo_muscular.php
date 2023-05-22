@@ -143,7 +143,23 @@ $mysqli->close();
   <div class="container p-5">
     <div class="row align-items-center">
         <div class="col-lg-4 col-md-12 d-flex justify-content-center mb-3 mb-md-0">
-            <img src="../../fotos/Ejercicios/pecho.png" alt="pecho" class="img-fluid">
+        <?php
+            if (isset($_GET['grupoMuscular'])) {
+                $nombreGrupoMuscular = $_GET['grupoMuscular'];
+
+                // Construye la ruta de la foto del grupo muscular
+                $rutaFotoGrupoMuscular = "../../fotos/Grupo Muscular" . $nombreGrupoMuscular . ".png";
+
+                // Verifica si la foto del grupo muscular existe en la carpeta
+                if (file_exists($rutaFotoGrupoMuscular)) {
+                    echo '<img src="' . $rutaFotoGrupoMuscular . '" alt="' . $nombreGrupoMuscular . '" class="img-fluid">';
+                } else {
+                    echo 'Foto del grupo muscular no encontrada.';
+                }
+            } else {
+                echo 'Grupo muscular no seleccionado.';
+            }
+            ?>
         </div>
         <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
             <?php
