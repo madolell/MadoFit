@@ -38,11 +38,13 @@ if ($resultado->num_rows > 0) {
   $descripcion = "";
   $equipoNecesario = "";
   $grupoMuscular = "";
+  echo "No se encontró el ejercicio con el ID proporcionado.";
 }
 
 $stmt->close();
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
