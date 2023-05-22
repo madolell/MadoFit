@@ -39,6 +39,8 @@ if ($resultado->num_rows > 0) {
   $equipoNecesario = "";
   $grupoMuscular = "";
   echo "No se encontró el ejercicio con el ID proporcionado.";
+  // Agrega una línea para imprimir el valor de $idEjercicio y verificar su contenido
+  echo "ID del ejercicio: " . $idEjercicio;
 }
 
 $stmt->close();
