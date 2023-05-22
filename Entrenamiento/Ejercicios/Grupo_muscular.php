@@ -142,34 +142,32 @@ $mysqli->close();
 
   <div class="container p-5">
     <div class="row align-items-center">
-      <div class="col-lg-4 col-md-12 d-flex justify-content-center mb-3 mb-md-0">
-        <img src="../../fotos/Ejercicios/pecho.png" alt="pecho" class="img-fluid">
-      </div>
-      <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
-        <div class="row">
-          <?php
-          // Verifica si se encontraron resultados
-          if ($result->num_rows > 0) {
-            $counter = 1;
-
-            // Itera sobre los resultados y muestra los nombres de los ejercicios en forma de fila
-            while ($row = $result->fetch_assoc()) {
-              $nombreEjercicio = $row['nombre'];
-
-              // Agrega el enlace con el nombre del ejercicio en una columna de la fila
-              echo '<div class="col-sm-6"><h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $counter . '. ' . $nombreEjercicio . '</a></h6></div>';
-
-              // Incrementa el contador
-              $counter++;
-            }
-          } else {
-            echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
-          }
-          ?>
+        <div class="col-lg-4 col-md-12 d-flex justify-content-center mb-3 mb-md-0">
+            <img src="../../fotos/Ejercicios/pecho.png" alt="pecho" class="img-fluid">
         </div>
-      </div>
+        <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
+            <?php
+            // Verifica si se encontraron resultados
+            if ($result->num_rows > 0) {
+                echo '<div class="row">';
+
+                // Itera sobre los resultados y muestra los nombres de los ejercicios en forma vertical
+                while ($row = $result->fetch_assoc()) {
+                    $nombreEjercicio = $row['nombre'];
+
+                    // Muestra el nombre del ejercicio en una columna de la fila
+                    echo '<div class="col-12"><h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $nombreEjercicio . '</a></h6></div>';
+                }
+
+                echo '</div>'; // Fin de la fila
+            } else {
+                echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
+            }
+            ?>
+        </div>
     </div>
-  </div>
+</div>
+
 
 
 
