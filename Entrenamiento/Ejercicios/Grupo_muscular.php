@@ -152,15 +152,17 @@ $mysqli->close();
           if ($resultEjercicios->num_rows > 0) {
             echo '<div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">';
             echo '<h6>Ejercicios:</h6>';
+            echo '<ul>'; // Inicio de la lista
 
             // Itera sobre los resultados y muestra los nombres de los ejercicios en forma vertical
             while ($rowEjercicio = $resultEjercicios->fetch_assoc()) {
               $nombreEjercicio = $rowEjercicio['nombre'];
 
-              // Muestra el nombre del ejercicio
-              echo '<h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $nombreEjercicio . '</a></h6>';
+              // Muestra el nombre del ejercicio como un elemento de lista
+              echo '<li><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $nombreEjercicio . '</a></li>';
             }
 
+            echo '</ul>'; // Fin de la lista
             echo '</div>';
           } else {
             echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
