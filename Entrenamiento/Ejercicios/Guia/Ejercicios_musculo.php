@@ -2,38 +2,46 @@
 session_start();
 include("../../../Auxiliares/conecta.php");
 
-
 if (!isset($_SESSION['email'])) {
   header('Location: ../../../formulario/login.php');
   exit;
 } else {
-  // Show users the page! 
+  // ¡Muestra la página a los usuarios!
 }
 
-// Obtener la ID del ejercicio desde la URL
-$idEjercicio = $_GET['id'];
+// Verificar si se proporcionó el parámetro id_ejercicio en la URL
+if (!isset($_GET['id_ejercicio'])) {
+  echo "No se proporcionó el ID del ejercicio.";
+  exit;
+}
 
-// Consulta SQL para obtener los detalles del ejercicio con la ID proporcionada
-$sql = "SELECT nombre, descripcion, grupo_muscular, equipo_necesario FROM ejercicios WHERE id_ejercicio = $idEjercicio";
-$resultado = $conn->query($sql);
+// Obtener el ID del ejercicio desde la URL
+$idEjercicio = $_GET['id_ejercicio'];
+
+// Preparar la consulta SQL utilizando una sentencia preparada para evitar la inyección de SQL
+$sql = "SELECT nombre, descripcion, grupo_muscular, equipo_necesario FROM ejercicios WHERE id_ejercicio = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $idEjercicio);
+$stmt->execute();
+$resultado = $stmt->get_result();
 
 if ($resultado->num_rows > 0) {
-    // Obtener los detalles del ejercicio y asignarlos a las variables correspondientes
-    $row = $resultado->fetch_assoc();
-    $nombre = $row['nombre'];
-    $descripcion = $row['descripcion'];
-    $grupoMuscular = $row['grupo_muscular'];
-    $equipoNecesario = $row['equipo_necesario'];
+  // Obtener los detalles del ejercicio y asignarlos a las variables correspondientes
+  $row = $resultado->fetch_assoc();
+  $nombre = $row['nombre'];
+  $descripcion = $row['descripcion'];
+  $grupoMuscular = $row['grupo_muscular'];
+  $equipoNecesario = $row['equipo_necesario'];
 } else {
-    // No se encontró el ejercicio con la ID proporcionada
-    $nombre = "Ejercicio no encontrado";
-    $descripcion = "";
-    $equipoNecesario = "";
-    $grupoMuscular = "";
+  // No se encontró el ejercicio con el ID proporcionado
+  $nombre = "Ejercicio no encontrado";
+  $descripcion = "";
+  $equipoNecesario = "";
+  $grupoMuscular = "";
 }
 
+$stmt->close();
 $conn->close();
-
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +151,7 @@ $conn->close();
         <h1><?php echo $nombre; ?></h1>
       </section>
       <div class="text-center">
-      <img src="<?php echo '../fotos/Ejercicios/' . $grupoMuscular . '/ejercicio_' . $idEjercicio . '.jpg'; ?>" class="img-fluid" alt="<?php echo $nombre; ?>">
+        <img src="<?php echo '../fotos/Ejercicios/' . $grupoMuscular . '/ejercicio_' . $idEjercicio . '.jpg'; ?>" class="img-fluid" alt="<?php echo $nombre; ?>">
       </div>
     </div>
   </header>
@@ -158,7 +166,7 @@ $conn->close();
         </div>
       </div>
       <div class="col-md-6 d-flex justify-content-center">
-        <div >
+        <div>
           <h4>Equipo Necesario</h4>
           <span><?php echo $equipoNecesario; ?></span>
           <h4>Músculos principales</h4>
