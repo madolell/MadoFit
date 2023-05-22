@@ -10,6 +10,27 @@ if (!isset($_SESSION['email'])) {
   // Show users the page! 
 }
 
+// Verifica si se ha proporcionado el parámetro "id" en la URL
+if(isset($_GET['id'])) {
+  $idEjercicio = $_GET['id'];
+  
+  // Realiza la consulta para obtener los detalles del ejercicio con la ID proporcionada
+  $sql = "SELECT * FROM ejercicios WHERE id = $idEjercicio";
+  $result = $conn->query($sql);
+  
+  // Verifica si se encontró el ejercicio
+  if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+      
+      // Obtén los detalles del ejercicio
+      $nombre = $row['nombre'];
+      $descripcion = $row['descripcion'];
+      $grupoMuscular = $row['grupo_muscular'];
+      $equipoNecesario = $row['equipo_necesario'];
+      $imagen = $row['imagen'];
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +44,7 @@ if (!isset($_SESSION['email'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../../../style.css">
   <link rel="icon" href="../../../fotos/logosolo.png">
-  <title></title>
+  <title><?php echo $nombre; ?></title>
 </head>
 
 <body>
@@ -109,17 +130,17 @@ if (!isset($_SESSION['email'])) {
           </svg></a></li>
       <li class="breadcrumb-item"><a href="../../../Entrenamiento.php" class="text-decoration-none text-dark">Entrenamiento</a></li>
       <li class="breadcrumb-item"><a href="../../../Entrenamiento/Ejercicios/Pecho.php" class="text-decoration-none text-dark">Pecho</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Press de banca con barra</li>
+      <li class="breadcrumb-item active" aria-current="page"><?php echo $nombre; ?></li>
     </ol>
   </div>
   <!-- Migas de pan -->
   <header>
     <div class="container-fluid">
       <section class="text-center">
-        <h1></h1>
+        <h1><?php echo $nombre; ?></h1>
       </section>
       <div class="text-center">
-        <img src="../../../fotos/Ejercicios/Pecho/pressdebanca.jpg" class="img-fluid" alt="Barbell Bench Press">
+        <img src="../../../fotos/Ejercicios/" class="img-fluid" alt="Barbell Bench Press">
       </div>
     </div>
   </header>
@@ -130,21 +151,20 @@ if (!isset($_SESSION['email'])) {
       <div class="col-md-6">
         <div>
           <h4>Posición inicial y ejecución</h4>
-          <p></p>
+          <p><?php echo $descripcion; ?></p>
         </div>
       </div>
       <div class="col-md-6 d-flex justify-content-center">
         <div >
           <h4>Equipo Necesario</h4>
-          <span></span>
+          <span><?php echo $equipoNecesario; ?></span>
           <h4>Músculos principales</h4>
-          <span></span>
-          <h4>Músculos secundarios</h4>
-          <span></span>
+          <span><?php echo $grupoMuscular; ?></span>
         </div>
       </div>
     </div>
   </div>
+
   <footer class="bg-dark text-white d-flex flex-column align-items-center justify-content-center">
 
     <div class="container p-1">
