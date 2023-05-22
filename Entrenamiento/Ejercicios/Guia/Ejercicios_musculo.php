@@ -11,7 +11,7 @@ if (!isset($_SESSION['email'])) {
 }
 
 // Obtener la ID del ejercicio desde la URL
-$idEjercicio = $_GET['id_ejercicio'];
+$idEjercicio = $_GET['id'];
 
 // Consulta SQL para obtener los detalles del ejercicio con la ID proporcionada
 $sql = "SELECT nombre, descripcion, grupo_muscular, equipo_necesario FROM ejercicios WHERE id_ejercicio = $idEjercicio";
