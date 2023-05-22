@@ -3,7 +3,7 @@ session_start();
 include("../../Auxiliares/conecta.php");
 
 // Realiza la conexión a la base de datos (reemplaza los valores con los tuyos)
-$mysqli = new mysqli("localhost", "usuario", "contraseña", "basedatos");
+$mysqli = new mysqli("localhost", "debianDB", "debianDB", "MadoFit");
 
 // Verifica si ocurrió algún error en la conexión
 if ($mysqli->connect_error) {
