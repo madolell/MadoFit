@@ -169,7 +169,7 @@ $mysqli->close();
 
           // Itera sobre los resultados y muestra los nombres de los ejercicios en forma de fila
           while ($row = $result->fetch_assoc()) {
-            $idEjercicio = $row['id'];
+            $idEjercicio = $row['id_ejercicio'];
             $nombreEjercicio = $row['nombre'];
 
             // Agrega el enlace con el nombre del ejercicio en una columna de la fila

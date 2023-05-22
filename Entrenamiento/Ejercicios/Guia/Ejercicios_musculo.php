@@ -11,10 +11,10 @@ if (!isset($_SESSION['email'])) {
 }
 
 // Obtener la ID del ejercicio desde la URL
-$idEjercicio = $_GET['id'];
+$idEjercicio = $_GET['id_ejercicio'];
 
 // Consulta SQL para obtener los detalles del ejercicio con la ID proporcionada
-$sql = "SELECT nombre, descripcion, equipo_necesario, grupo_muscular FROM ejercicios WHERE id = $idEjercicio";
+$sql = "SELECT nombre, descripcion, grupo_muscular, equipo_necesario FROM ejercicios WHERE id_ejercicio = $idEjercicio";
 $resultado = $conn->query($sql);
 
 if ($resultado->num_rows > 0) {
@@ -22,8 +22,8 @@ if ($resultado->num_rows > 0) {
     $row = $resultado->fetch_assoc();
     $nombre = $row['nombre'];
     $descripcion = $row['descripcion'];
-    $equipoNecesario = $row['equipo_necesario'];
     $grupoMuscular = $row['grupo_muscular'];
+    $equipoNecesario = $row['equipo_necesario'];
 } else {
     // No se encontró el ejercicio con la ID proporcionada
     $nombre = "Ejercicio no encontrado";
