@@ -148,7 +148,7 @@ $mysqli->close();
                 $nombreGrupoMuscular = $_GET['grupoMuscular'];
 
                 // Construye la ruta de la foto del grupo muscular
-                $rutaFotoGrupoMuscular = "../../fotos/Grupo Muscular" . $nombreGrupoMuscular . ".png";
+                $rutaFotoGrupoMuscular = "../../fotos/Grupo Muscular/" . $nombreGrupoMuscular . ".png";
 
                 // Verifica si la foto del grupo muscular existe en la carpeta
                 if (file_exists($rutaFotoGrupoMuscular)) {
