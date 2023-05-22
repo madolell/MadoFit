@@ -11,10 +11,4 @@ $conexionExitosa = true;
 if ($conn->connect_error) {
         $conexionExitosa = false;
     }
-
-// Mostrar mensaje de conexión exitosa
-if ($conexionExitosa) {
-    echo "Conexión exitosa";
-}
-
 ?>
