@@ -41,7 +41,14 @@ if ($resultado->num_rows > 0) {
   echo "No se encontró el ejercicio con el ID proporcionado.";
   // Agrega una línea para imprimir el valor de $idEjercicio y verificar su contenido
   echo "ID del ejercicio: " . $idEjercicio;
+  
+  if (empty($idEjercicio)) {
+    echo "ID del ejercicio no proporcionado.";
+    exit;
+  }
+
 }
+
 
 $stmt->close();
 $conn->close();
