@@ -10,26 +10,29 @@ if (!isset($_SESSION['email'])) {
   // Show users the page! 
 }
 
-// Verifica si se ha proporcionado el parámetro "id" en la URL
-if(isset($_GET['id'])) {
-  $idEjercicio = $_GET['id'];
-  
-  // Realiza la consulta para obtener los detalles del ejercicio con la ID proporcionada
-  $sql = "SELECT * FROM ejercicios WHERE id = $idEjercicio";
-  $result = $conn->query($sql);
-  
-  // Verifica si se encontró el ejercicio
-  if ($result->num_rows > 0) {
-      $row = $result->fetch_assoc();
-      
-      // Obtén los detalles del ejercicio
-      $nombre = $row['nombre'];
-      $descripcion = $row['descripcion'];
-      $grupoMuscular = $row['grupo_muscular'];
-      $equipoNecesario = $row['equipo_necesario'];
-      $imagen = $row['imagen'];
-  }
+// Obtener la ID del ejercicio desde la URL
+$idEjercicio = $_GET['id'];
+
+// Consulta SQL para obtener los detalles del ejercicio con la ID proporcionada
+$sql = "SELECT nombre, descripcion, equipo_necesario, grupo_muscular FROM ejercicios WHERE id = $idEjercicio";
+$resultado = $conn->query($sql);
+
+if ($resultado->num_rows > 0) {
+    // Obtener los detalles del ejercicio y asignarlos a las variables correspondientes
+    $row = $resultado->fetch_assoc();
+    $nombre = $row['nombre'];
+    $descripcion = $row['descripcion'];
+    $equipoNecesario = $row['equipo_necesario'];
+    $grupoMuscular = $row['grupo_muscular'];
+} else {
+    // No se encontró el ejercicio con la ID proporcionada
+    $nombre = "Ejercicio no encontrado";
+    $descripcion = "";
+    $equipoNecesario = "";
+    $grupoMuscular = "";
 }
+
+$conn->close();
 
 ?>
 
@@ -140,7 +143,7 @@ if(isset($_GET['id'])) {
         <h1><?php echo $nombre; ?></h1>
       </section>
       <div class="text-center">
-        <img src="../../../fotos/Ejercicios/" class="img-fluid" alt="Barbell Bench Press">
+      <img src="<?php echo '../fotos/Ejercicios/' . $grupoMuscular . '/ejercicio_' . $idEjercicio . '.jpg'; ?>" class="img-fluid" alt="<?php echo $nombre; ?>">
       </div>
     </div>
   </header>
