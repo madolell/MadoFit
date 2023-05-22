@@ -149,19 +149,19 @@ $mysqli->close();
         <div class="row">
           <?php
           // Verifica si se encontraron resultados
-          if ($result->num_rows > 0) {
-            $counter = 1;
+          if ($resultEjercicios->num_rows > 0) {
+            echo '<div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">';
+            echo '<h6>Ejercicios:</h6>';
 
-            // Itera sobre los resultados y muestra los nombres de los ejercicios en forma de fila
-            while ($row = $result->fetch_assoc()) {
-              $nombreEjercicio = $row['nombre'];
+            // Itera sobre los resultados y muestra los nombres de los ejercicios en forma vertical
+            while ($rowEjercicio = $resultEjercicios->fetch_assoc()) {
+              $nombreEjercicio = $rowEjercicio['nombre'];
 
-              // Agrega el enlace con el nombre del ejercicio en una columna de la fila
-              echo '<div class="col-sm-6"><h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $counter . '. ' . $nombreEjercicio . '</a></h6></div>';
-
-              // Incrementa el contador
-              $counter++;
+              // Muestra el nombre del ejercicio
+              echo '<h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $nombreEjercicio . '</a></h6>';
             }
+
+            echo '</div>';
           } else {
             echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
           }
