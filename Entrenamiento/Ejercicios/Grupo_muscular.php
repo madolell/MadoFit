@@ -31,18 +31,6 @@ $stmt->execute();
 // Obtiene los resultados de la consulta
 $result = $stmt->get_result();
 
-// Verifica si se encontraron resultados
-if ($result->num_rows > 0) {
-    echo "<h2>Ejercicios de " . $grupoMuscular . "</h2>";
-
-    // Itera sobre los resultados y muestra los nombres de los ejercicios
-    while ($row = $result->fetch_assoc()) {
-        echo "<p>" . $row['nombre'] . "</p>";
-    }
-} else {
-    echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
-}
-
 // Cierra la conexión y libera los recursos
 $stmt->close();
 $mysqli->close();
@@ -162,14 +150,27 @@ $mysqli->close();
                 <img src="../../fotos/Ejercicios/pecho.png" alt="pecho" class="img-fluid">
             </div>
             <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
-                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">1. </a></h6>
-                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">2. </a></h6>
-                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">3. </a></h6>
-                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">4. </a></h6>
-                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">5. </a></h6>
-                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">6. </a></h6>
-                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">7. </a></h6>
-                <h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">8. </a></h6>
+            <?php
+            // Verifica si se encontraron resultados
+            if ($result->num_rows > 0) {
+                echo "<h6>";
+                $counter = 1;
+
+                // Itera sobre los resultados y muestra los nombres de los ejercicios
+                while ($row = $result->fetch_assoc()) {
+                    $nombreEjercicio = $row['nombre'];
+
+                    // Agrega el enlace con el nombre del ejercicio
+                    echo '<a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $counter . '. ' . $nombreEjercicio . '</a>';
+
+                    // Incrementa el contador
+                    $counter++;
+                }
+                echo "</h6>";
+            } else {
+                echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
+            }
+            ?>
             </div>
         </div>
     </div>
