@@ -142,47 +142,49 @@ $mysqli->close();
 
   <div class="container p-5">
     <div class="row align-items-center">
-        <div class="col-lg-4 col-md-12 d-flex justify-content-center mb-3 mb-md-0">
+      <div class="col-lg-4 col-md-12 d-flex justify-content-center mb-3 mb-md-0">
         <?php
-            if (isset($_GET['grupoMuscular'])) {
-                $nombreGrupoMuscular = $_GET['grupoMuscular'];
+        if (isset($_GET['grupoMuscular'])) {
+          $nombreGrupoMuscular = $_GET['grupoMuscular'];
 
-                // Construye la ruta de la foto del grupo muscular
-                $rutaFotoGrupoMuscular = "../../fotos/Grupo Muscular/" . $nombreGrupoMuscular . ".png";
+          // Construye la ruta de la foto del grupo muscular
+          $rutaFotoGrupoMuscular = "../../fotos/Grupo Muscular/" . $nombreGrupoMuscular . ".png";
 
-                // Verifica si la foto del grupo muscular existe en la carpeta
-                if (file_exists($rutaFotoGrupoMuscular)) {
-                    echo '<img src="' . $rutaFotoGrupoMuscular . '" alt="' . $nombreGrupoMuscular . '" class="img-fluid">';
-                } else {
-                    echo 'Foto del grupo muscular no encontrada.';
-                }
-            } else {
-                echo 'Grupo muscular no seleccionado.';
-            }
-            ?>
-        </div>
-        <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
-            <?php
-            // Verifica si se encontraron resultados
-            if ($result->num_rows > 0) {
-                echo '<div class="row">';
+          // Verifica si la foto del grupo muscular existe en la carpeta
+          if (file_exists($rutaFotoGrupoMuscular)) {
+            echo '<img src="' . $rutaFotoGrupoMuscular . '" alt="' . $nombreGrupoMuscular . '" class="img-fluid">';
+          } else {
+            echo 'Foto del grupo muscular no encontrada.';
+          }
+        } else {
+          echo 'Grupo muscular no seleccionado.';
+        }
+        ?>
+      </div>
+      <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
+        <?php
+        // Verifica si se encontraron resultados
+        if ($result->num_rows > 0) {
+          $counter = 1;
 
-                // Itera sobre los resultados y muestra los nombres de los ejercicios en forma vertical
-                while ($row = $result->fetch_assoc()) {
-                    $nombreEjercicio = $row['nombre'];
+          // Itera sobre los resultados y muestra los nombres de los ejercicios en forma de fila
+          while ($row = $result->fetch_assoc()) {
+            $idEjercicio = $row['id'];
+            $nombreEjercicio = $row['nombre'];
 
-                    // Muestra el nombre del ejercicio en una columna de la fila
-                    echo '<div class="col-12 pt-3"><h6><a href="../Ejercicios/Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $nombreEjercicio . '</a></h6></div>';
-                }
+            // Agrega el enlace con el nombre del ejercicio en una columna de la fila
+            echo '<div class="col-sm-6"><h6><a href="../../../Guia/Ejercicios_musculo.php?id=' . $idEjercicio . '" class="ejercicio-link">' . $counter . '. ' . $nombreEjercicio . '</a></h6></div>';
 
-                echo '</div>'; // Fin de la fila
-            } else {
-                echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
-            }
-            ?>
-        </div>
+            // Incrementa el contador
+            $counter++;
+          }
+        } else {
+          echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
+        }
+        ?>
+      </div>
     </div>
-</div>
+  </div>
 
 
 
