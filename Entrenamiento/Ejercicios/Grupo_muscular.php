@@ -7,7 +7,7 @@ $mysqli = new mysqli("localhost", "debianDB", "debianDB", "MadoFit");
 
 // Verifica si ocurrió algún error en la conexión
 if ($mysqli->connect_error) {
-    die("Error en la conexión: " . $mysqli->connect_error);
+  die("Error en la conexión: " . $mysqli->connect_error);
 }
 
 // Obtén el valor del parámetro grupoMuscular
@@ -21,7 +21,7 @@ $stmt = $mysqli->prepare($sql);
 
 // Verifica si ocurrió algún error en la preparación de la sentencia
 if (!$stmt) {
-    die("Error en la preparación de la consulta: " . $mysqli->error);
+  die("Error en la preparación de la consulta: " . $mysqli->error);
 }
 
 // Vincula el parámetro y ejecuta la consulta
@@ -127,94 +127,90 @@ $mysqli->close();
   </header>
   <!-- Nav del logo -->
 
-    <!-- Migas de pan -->
-<div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
-    aria-label="breadcrumb">
+  <!-- Migas de pan -->
+  <div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
     <ol class="breadcrumb ms-5 me-3 mt-4">
-        <li class="breadcrumb-item"><a href="../../Inicio.php"><svg xmlns="http://www.w3.org/2000/svg" width="15"
-                    height="15" fill="dark" class="bi bi-house-door-fill mb-1" viewBox="0 0 16 16">
-                    <path
-                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
-                </svg></a></li>
-        <li class="breadcrumb-item"><a href="../../Entrenamiento.php"
-                class="text-decoration-none text-dark">Entrenamiento</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Pecho</li>
+      <li class="breadcrumb-item"><a href="../../Inicio.php"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="dark" class="bi bi-house-door-fill mb-1" viewBox="0 0 16 16">
+            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
+          </svg></a></li>
+      <li class="breadcrumb-item"><a href="../../Entrenamiento.php" class="text-decoration-none text-dark">Entrenamiento</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Pecho</li>
     </ol>
-</div>
-<!-- Migas de pan -->
+  </div>
+  <!-- Migas de pan -->
 
 
-    <div class="container p-5">
-        <div class="row align-items-center">
-            <div class="col-lg-4 col-md-12 d-flex justify-content-center mb-3 mb-md-0">
-                <img src="../../fotos/Ejercicios/pecho.png" alt="pecho" class="img-fluid">
-            </div>
-            <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
-            <?php
-            // Verifica si se encontraron resultados
-            if ($result->num_rows > 0) {
-                echo "<h6>";
-                $counter = 1;
+  <div class="container p-5">
+    <div class="row align-items-center">
+      <div class="col-lg-4 col-md-12 d-flex justify-content-center mb-3 mb-md-0">
+        <img src="../../fotos/Ejercicios/pecho.png" alt="pecho" class="img-fluid">
+      </div>
+      <div class="col-lg-8 col-md-12 ps-md-5 pt-5 pt-md-0">
+        <div class="row">
+          <?php
+          // Verifica si se encontraron resultados
+          if ($result->num_rows > 0) {
+            $counter = 1;
 
-                // Itera sobre los resultados y muestra los nombres de los ejercicios
-                while ($row = $result->fetch_assoc()) {
-                    $nombreEjercicio = $row['nombre'];
+            // Itera sobre los resultados y muestra los nombres de los ejercicios en forma de fila
+            while ($row = $result->fetch_assoc()) {
+              $nombreEjercicio = $row['nombre'];
 
-                    // Agrega el enlace con el nombre del ejercicio
-                    echo '<a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $counter . '. ' . $nombreEjercicio . '</a>';
+              // Agrega el enlace con el nombre del ejercicio en una columna de la fila
+              echo '<div class="col-sm-6"><h6><a href="../../../Guia/Ejercicios_musculo.php" class="ejercicio-link">' . $counter . '. ' . $nombreEjercicio . '</a></h6></div>';
 
-                    // Incrementa el contador
-                    $counter++;
-                }
-                echo "</h6>";
-            } else {
-                echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
+              // Incrementa el contador
+              $counter++;
             }
-            ?>
-            </div>
+          } else {
+            echo "No se encontraron ejercicios para el grupo muscular seleccionado.";
+          }
+          ?>
         </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <footer class="bg-dark text-white d-flex flex-column align-items-center justify-content-center">
+
+    <div class="container p-1">
+      <div class="row my-4">
+
+        <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+          <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 130px; height: 130px;">
+            <img src="../../fotos/logosolo.png" height="100" alt="" loading="lazy" />
+          </div>
+          <h4 class="text-center">MadoFit</h4>
+        </div>
+
+        <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4 text-center">Contacto</h5>
+          <ul class="list-unstyled text-center">
+            <li>
+              <p><i class="bi bi-geo-alt-fill pe-2"></i>Melilla</p>
+            </li>
+            <li>
+              <p><i class="bi bi-phone pe-2"></i>651795733</p>
+            </li>
+            <li>
+              <p><i class="bi bi-envelope pe-2 mb-0"></i>aleyrodi@hotmail.es</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
 
+    <div class="container-fluid text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2023 Copyright:
+      <a class="text-white" href="https://MadoFit.com/">MadoFit.com</a>
+    </div>
 
-
-
-    <footer class="bg-dark text-white d-flex flex-column align-items-center justify-content-center">
-
-        <div class="container p-1">
-            <div class="row my-4">
-
-                <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
-                        style="width: 130px; height: 130px;">
-                        <img src="../../fotos/logosolo.png" height="100" alt="" loading="lazy" />
-                    </div>
-                    <h4 class="text-center">MadoFit</h4>
-                </div>
-
-                <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4 text-center">Contacto</h5>
-                    <ul class="list-unstyled text-center">
-                        <li>
-                            <p><i class="bi bi-geo-alt-fill pe-2"></i>Melilla</p>
-                        </li>
-                        <li>
-                            <p><i class="bi bi-phone pe-2"></i>651795733</p>
-                        </li>
-                        <li>
-                            <p><i class="bi bi-envelope pe-2 mb-0"></i>aleyrodi@hotmail.es</p>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container-fluid text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2023 Copyright:
-            <a class="text-white" href="https://MadoFit.com/">MadoFit.com</a>
-        </div>
-
-    </footer>
+  </footer>
 </body>
 
 </html>
