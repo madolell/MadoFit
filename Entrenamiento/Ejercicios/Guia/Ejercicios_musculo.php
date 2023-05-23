@@ -155,7 +155,7 @@ $conn->close();
         <h1><?php echo htmlspecialchars($nombre); ?></h1>
       </section>
       <div class="text-center">
-        <img src="<?php echo '../fotos/Ejercicios/' . $grupoMuscular . '/ejercicio_' . $idEjercicio . '.jpg'; ?>" class="img-fluid" alt="<?php echo $nombre; ?>">
+        <img src="<?php echo '../fotos/Ejercicios/' . $grupoMuscular . '/ejercicio_' . $idEjercicio . '.png'; ?>" class="img-fluid" alt="<?php echo $nombre; ?>">
       </div>
     </div>
   </header>
