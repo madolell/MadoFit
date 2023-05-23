@@ -1,33 +1,40 @@
 <?php
 session_start();
-include("../../../Auxiliares/conecta.php");
+include("../../Auxiliares/conecta.php");
 
-if (!isset($_SESSION['email'])) {
-  header('Location: ../../../formulario/login.php');
-  exit;
-} else {
-  // ¡Muestra la página a los usuarios!
+// Realiza la conexión a la base de datos (reemplaza los valores con los tuyos)
+$mysqli = new mysqli("localhost", "debianDB", "debianDB", "MadoFit");
+
+// Verifica si ocurrió algún error en la conexión
+if ($mysqli->connect_error) {
+  die("Error en la conexión: " . $mysqli->connect_error);
 }
 
-// Verificar si se proporcionó el parámetro id_ejercicio en la URL
-if (!isset($_GET['id_ejercicio'])) {
-  echo "No se proporcionó el ID del ejercicio.";
-  exit;
-}
-
-// Obtener el ID del ejercicio desde la URL
+// Obtén el valor del parámetro idEjercicio
 $idEjercicio = $_GET['id_ejercicio'];
 
-// Preparar la consulta SQL utilizando una sentencia preparada para evitar la inyección de SQL
-$sql = "SELECT nombre, descripcion, grupo_muscular, equipo_necesario FROM ejercicios WHERE id_ejercicio = ?";
-$stmt = $conn->prepare($sql);
+// Prepara la consulta utilizando una sentencia preparada para evitar ataques de inyección SQL
+$sql = "SELECT * FROM ejercicios WHERE id_ejercicio = ?";
+
+// Prepara la sentencia
+$stmt = $mysqli->prepare($sql);
+
+// Verifica si ocurrió algún error en la preparación de la sentencia
+if (!$stmt) {
+  die("Error en la preparación de la consulta: " . $mysqli->error);
+}
+
+// Vincula el parámetro y ejecuta la consulta
 $stmt->bind_param("i", $idEjercicio);
 $stmt->execute();
-$resultado = $stmt->get_result();
 
-if ($resultado->num_rows > 0) {
-  // Obtener los detalles del ejercicio y asignarlos a las variables correspondientes
-  $row = $resultado->fetch_assoc();
+// Obtiene los resultados de la consulta
+$result = $stmt->get_result();
+
+// Verifica si se encontró un ejercicio con el ID proporcionado
+if ($result->num_rows == 1) {
+  // Obtén los datos del ejercicio
+  $row = $result->fetch_assoc();
   $nombre = $row['nombre'];
   $descripcion = $row['descripcion'];
   $grupoMuscular = $row['grupo_muscular'];
