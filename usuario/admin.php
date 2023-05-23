@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("../../../Auxiliares/conecta.php");
 
 // Verificar si el usuario admin ha iniciado sesión
 if (isset($_SESSION['email']) && $_SESSION['email'] === 'admin') {
@@ -20,6 +21,7 @@ if (isset($_SESSION['email']) && $_SESSION['email'] === 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Panel de Administración</title>
+    <link rel="icon" href="../fotos/logosolo.png">
     <!-- Enlaces CSS de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -35,25 +37,57 @@ if (isset($_SESSION['email']) && $_SESSION['email'] === 'admin') {
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Correo electrónico</th>
+                        <th>Apellidos</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Altura</th>
+                        <th>Peso</th>
+                        <th>Provincia</th>
+                        <th>Poblacion</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Aquí se generaría dinámicamente la lista de usuarios -->
-                    <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>johndoe@example.com</td>
-                        <td>
-                            <a href="edit_user.php?id=1" class="btn btn-primary">Editar</a>
-                            <a href="deactivate_user.php?id=1" class="btn btn-warning">Desactivar</a>
-                            <a href="delete_user.php?id=1" class="btn btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
+                    <?php
+                    // Realizar la consulta a la base de datos para obtener los usuarios
+                    $sql = "SELECT * FROM usuarios";
+                    $result = $conn->query($sql);
+        
+                    // Verificar si se encontraron usuarios
+                    if ($result->num_rows > 0) {
+                        // Iterar sobre los resultados y generar las filas de la tabla
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row['id_usuario'] . "</td>";
+                            echo "<td>" . $row['nombre'] . "</td>";
+                            echo "<td>" . $row['apellidos'] . "</td>";
+                            echo "<td>" . $row['email'] . "</td>";
+                            echo "<td>" . $row['password'] . "</td>";
+                            echo "<td>" . $row['fecha_nacimiento'] . "</td>";
+                            echo "<td>" . $row['altura'] . "</td>";
+                            echo "<td>" . $row['peso'] . "</td>";
+                            echo "<td>" . $row['provincia'] . "</td>";
+                            echo "<td>" . $row['poblacion'] . "</td>";
+                            echo "<td>";
+                            echo "<a href='edit_user.php?id=" . $row['id_usuario'] . "' class='btn btn-primary'>Editar</a>";
+                            echo "<a href='deactivate_user.php?id=" . $row['id_usuario'] . "' class='btn btn-warning'>Desactivar</a>";
+                            echo "<a href='delete_user.php?id=" . $row['id_usuario'] . "' class='btn btn-danger'>Eliminar</a>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        // No se encontraron usuarios
+                        echo "<tr><td colspan='11'>No se encontraron usuarios.</td></tr>";
+                    }
+        
+                    // Liberar los recursos de la consulta
+                    $result->free();
+                    ?>
                 </tbody>
             </table>
-
+        </div>
+        <div>
             <h2>Crear usuario</h2>
             <form action="create_user.php" method="POST">
                 <div class="mb-3">
@@ -68,14 +102,6 @@ if (isset($_SESSION['email']) && $_SESSION['email'] === 'admin') {
                     <label for="password" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
-                <div class="mb-3">
-                    <label for="roles" class="form-label">Roles</label>
-                    <select class="form-control" id="roles" name="roles[]" multiple required>
-                        <option value="admin">Admin</option>
-                        <option value="editor">Editor</option>
-                        <option value="user">Usuario</option>
-                    </select>
-                </div>
                 <button type="submit" class="btn btn-primary">Crear usuario</button>
             </form>
 
@@ -88,14 +114,6 @@ if (isset($_SESSION['email']) && $_SESSION['email'] === 'admin') {
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo electrónico</label>
                     <input type="email" class="form-control" id="email" name="email" required value="johndoe@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="roles" class="form-label">Roles</label>
-                    <select class="form-control" id="roles" name="roles[]" multiple required>
-                        <option value="admin" selected>Admin</option>
-                        <option value="editor">Editor</option>
-                        <option value="user" selected>Usuario</option>
-                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar cambios</button>
             </form>
