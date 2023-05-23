@@ -14,7 +14,7 @@ if ($mysqli->connect_error) {
 $grupoMuscular = $_GET['grupoMuscular'];
 
 // Prepara la consulta utilizando una sentencia preparada para evitar ataques de inyección SQL
-$sql = "SELECT nombre FROM ejercicios WHERE grupo_muscular = ?";
+$sql = "SELECT nombre, id_ejercicio FROM ejercicios WHERE grupo_muscular = ?";
 
 // Prepara la sentencia
 $stmt = $mysqli->prepare($sql);
@@ -173,8 +173,7 @@ $mysqli->close();
             $nombreEjercicio = $row['nombre'];
 
             // Agrega el enlace con el nombre del ejercicio en una columna de la fila
-            echo '<div class="col-sm-7 pt-3"><h6><a href="../Ejercicios/Guia/Ejercicios_musculo.php?id_ejercicio=' . $idEjercicio . '" class="ejercicio-link">' . $idEjercicio . '. ' . $nombreEjercicio . '</a></h6></div>';
-
+            echo '<div class="col-sm-7 pt-3"><h6><a href="../Ejercicios/Guia/Ejercicios_musculo.php?id_ejercicio=' . $idEjercicio . '" class="ejercicio-link">' . $counter . '. ' . $nombreEjercicio . '</a></h6></div>';
 
             // Incrementa el contador
             $counter++;
