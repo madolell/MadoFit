@@ -172,6 +172,8 @@ $mysqli->close();
             $idEjercicio = $row['id_ejercicio'];
             $nombreEjercicio = $row['nombre'];
 
+            echo $idEjercicio;
+
             // Agrega el enlace con el nombre del ejercicio en una columna de la fila
             echo '<div class="col-sm-7 pt-3"><h6><a href="../Ejercicios/Guia/Ejercicios_musculo.php?id_ejercicio=' . $idEjercicio . '" class="ejercicio-link">' . $counter . '. ' . $nombreEjercicio . '</a></h6></div>';
 
