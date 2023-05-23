@@ -19,13 +19,13 @@ if (!isset($_GET['id_ejercicio'])) {
 $idEjercicio = $_GET['id_ejercicio'];
 
 // Preparar la consulta SQL utilizando una sentencia preparada para evitar la inyección de SQL
-$sql = "SELECT nombre, descripcion, grupo_muscular, equipo_necesario FROM ejercicios WHERE id_ejercicio = ?";
+$sql = "SELECT nombre, descripcion, grupo_muscular, equipo_necesario FROM ejercicios WHERE id_ejercicio = " . $idEjercicio;
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $idEjercicio);
 $stmt->execute();
 $resultado = $stmt->get_result();
 
-if ($resultado->num_rows > 1) {
+if ($resultado->num_rows > 0) {
   // Obtener los detalles del ejercicio y asignarlos a las variables correspondientes
   $row = $resultado->fetch_assoc();
   $nombre = $row['nombre'];
