@@ -59,7 +59,7 @@ $conn->close();
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../../../style.css">
   <link rel="icon" href="../../../fotos/logosolo.png">
-  <title><?php echo $nombre; ?></title>
+  <title><?php echo htmlspecialchars($nombre); ?></title>
 </head>
 
 <body>
@@ -145,14 +145,14 @@ $conn->close();
           </svg></a></li>
       <li class="breadcrumb-item"><a href="../../../Entrenamiento.php" class="text-decoration-none text-dark">Entrenamiento</a></li>
       <li class="breadcrumb-item"><a href="../../../Entrenamiento/Ejercicios/Pecho.php" class="text-decoration-none text-dark">Pecho</a></li>
-      <li class="breadcrumb-item active" aria-current="page"><?php echo $nombre; ?></li>
+      <li class="breadcrumb-item active" aria-current="page"><?php echo htmlspecialchars($nombre); ?></li>
     </ol>
   </div>
   <!-- Migas de pan -->
   <header>
     <div class="container-fluid">
       <section class="text-center">
-        <h1><?php echo $nombre; ?></h1>
+        <h1><?php echo htmlspecialchars($nombre); ?></h1>
       </section>
       <div class="text-center">
         <img src="<?php echo '../fotos/Ejercicios/' . $grupoMuscular . '/ejercicio_' . $idEjercicio . '.jpg'; ?>" class="img-fluid" alt="<?php echo $nombre; ?>">
@@ -166,15 +166,15 @@ $conn->close();
       <div class="col-md-6">
         <div>
           <h4>Posición inicial y ejecución</h4>
-          <p><?php echo $descripcion; ?></p>
+          <p><?php echo htmlspecialchars($descripcion); ?></p>
         </div>
       </div>
       <div class="col-md-6 d-flex justify-content-center">
         <div>
           <h4>Equipo Necesario</h4>
-          <span><?php echo $equipoNecesario; ?></span>
+          <span><?php echo htmlspecialchars($equipoNecesario); ?></span>
           <h4>Músculos principales</h4>
-          <span><?php echo $grupoMuscular; ?></span>
+          <span><?php echo htmlspecialchars($grupoMuscular); ?></span>
         </div>
       </div>
     </div>
