@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../../../Auxiliares/conecta.php");
+include("../Auxiliares/conecta.php");
 
 // Verificar si el usuario admin ha iniciado sesión
 if (isset($_SESSION['email']) && $_SESSION['email'] === 'admin') {
