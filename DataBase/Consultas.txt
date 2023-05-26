@@ -1,0 +1,15 @@
+"SELECT id_usuario, email, password, nombre FROM usuarios WHERE email = ?"
+"INSERT INTO usuarios (nombre, apellidos, email, password, fecha_nacimiento, peso, altura, provincia, poblacion)VALUES ('$nombre', '$apellidos', '$email', '$hashedPassword', '$fechaNacimiento', '$peso', '$altura', '$provincia', '$poblacion')";
+"SELECT * FROM usuarios WHERE email = ?";
+"UPDATE usuarios SET ";
+"SELECT * FROM estadisticas WHERE id_usuario = '$id_usuario'";
+"UPDATE estadisticas SET fecha = '$fecha', calorias_quemadas = '$calorias', masa_muscular = '$masa_muscular' WHERE id_usuario = '$id_usuario'";
+"INSERT INTO estadisticas (fecha, calorias_quemadas, masa_muscular, id_usuario) VALUES ('$fecha', '$calorias', '$masa_muscular', '$id_usuario')";
+"SELECT nombre, id_ejercicio FROM ejercicios WHERE grupo_muscular = ?";
+"SELECT nombre, descripcion, grupo_muscular, equipo_necesario, imagen FROM ejercicios WHERE id_ejercicio = ?";
+"INSERT INTO ejercicios (nombre, descripcion, grupo_muscular, equipo_necesario, imagen) VALUES (?, ?, ?, ?, ?)";
+“INSERT INTO usuarios (nombre, apellidos, email, password, fecha_nacimiento, altura, peso, provincia, poblacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+"DELETE FROM ejercicios WHERE id_ejercicio = ?";
+"DELETE FROM usuarios WHERE id_usuario = ?";
+"UPDATE ejercicios SET nombre = ?, descripcion = ?, grupo_muscular = ?, equipo_necesario = ?, imagen = ? WHERE id_ejercicio = ?";
+"UPDATE usuarios SET nombre = ?, apellidos = ?, email = ?, password = ?, fecha_nacimiento = ?, altura = ?, peso = ?, provincia = ?, poblacion = ? WHERE id_usuario = ?";
