@@ -65,7 +65,7 @@ if (isset($_SESSION["mensaje"])) {
 
             <?php if (isset($_SESSION["nombre"])) { ?>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php $_SESSION["nombre"] ?>
+                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <?php echo $_SESSION["nombre"] ?>
                 </a>
                 <ul class="dropdown-menu text-bg-dark w-100" aria-labelledby="profileDropdown">
                   <li><a class="dropdown-item text-light" href="../usuario/perfil.php">Perfil</a></li>
@@ -142,37 +142,37 @@ if (isset($_SESSION["mensaje"])) {
   </div>
 
 
-    <footer class="bg-dark text-white d-flex flex-column align-items-center justify-content-center">
-      <div class="container p-1">
-        <div class="row my-4">
+  <footer class="bg-dark text-white d-flex flex-column align-items-center justify-content-center">
+    <div class="container p-1">
+      <div class="row my-4">
 
-          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-            <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 130px; height: 130px;">
-              <img src="../fotos/logosolo.png" height="100" alt="" loading="lazy" />
-            </div>
-            <h4 class="text-center">MadoFit</h4>
+        <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+          <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 130px; height: 130px;">
+            <img src="../fotos/logosolo.png" height="100" alt="" loading="lazy" />
           </div>
-          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-4 text-center">Contacto</h5>
-            <ul class="list-unstyled text-center">
-              <li>
-                <p><i class="bi bi-geo-alt-fill pe-2"></i>Melilla</p>
-              </li>
-              <li>
-                <p><i class="bi bi-phone pe-2"></i>651795733</p>
-              </li>
-              <li>
-                <p><i class="bi bi-envelope pe-2 mb-0"></i>aleyrodi@hotmail.es</p>
-              </li>
-            </ul>
-          </div>
+          <h4 class="text-center">MadoFit</h4>
+        </div>
+        <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4 text-center">Contacto</h5>
+          <ul class="list-unstyled text-center">
+            <li>
+              <p><i class="bi bi-geo-alt-fill pe-2"></i>Melilla</p>
+            </li>
+            <li>
+              <p><i class="bi bi-phone pe-2"></i>651795733</p>
+            </li>
+            <li>
+              <p><i class="bi bi-envelope pe-2 mb-0"></i>aleyrodi@hotmail.es</p>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="container-fluid text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2023 Copyright:
-        <a class="text-white" href="https://MadoFit.com/">MadoFit.com</a>
-      </div>
-    </footer>
+    </div>
+    <div class="container-fluid text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2023 Copyright:
+      <a class="text-white" href="https://MadoFit.com/">MadoFit.com</a>
+    </div>
+  </footer>
 
 
 </body>
