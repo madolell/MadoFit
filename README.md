@@ -567,7 +567,7 @@ Se muestran diferentes pantallas que constituyen el desarrollo final de la aplic
 
 ![ArbolDirectorios](Imagenes/Contacto.JPG)
 
-#BIBLIOGRAFÍA
+# BIBLIOGRAFÍA 
 
 He utilizado páginas y aplicaciones como referencia como https://www.ictiva.com, https://blog.instafit.com/casa/ y aplicaciones como FitKeeper.
 
