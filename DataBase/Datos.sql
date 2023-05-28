@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 26-05-2023 a las 20:12:20
+-- Tiempo de generación: 27-05-2023 a las 16:52:51
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.0.25
 
@@ -49,7 +49,7 @@ INSERT INTO `ejercicios` (`id_ejercicio`, `nombre`, `descripcion`, `grupo_muscul
 (5, 'Press de banca inclinado con barra', 'Tumbado en un banco inclinado con los pies en el suelo. Toma la barra con un agarre más amplio que el ancho de los hombros. Tus antebrazos deben estar perpendiculares al suelo.\r\n        \r\n        Saca la barra y bájala lentamente hasta la parte superior de tu pecho. A medida que contraes los pectorales, empuja la carga hacia arriba hasta que los brazos estén casi rectos.\r\n        \r\n        Durante todo el movimiento:\r\n        \r\n       1. Mantén los codos hacia afuera para poner el máximo esfuerzo en el pecho y el mínimo en los deltoides frontales y el tríceps.\r\n       2. Mantén los hombros pegados al banco.', 'Pectorales', 'Barra, banco', 'pressdebancainclinado.jpg', NULL),
 (6, 'Press de banca con mancuernas', 'Tumbado en el banco, con los pies en el suelo, una mancuerna en cada mano, agarre de pronación. Sostén las mancuernas a los lados a la altura del pecho. Los antebrazos deben estar perpendiculares al suelo.\r\n        \r\n        Contrae los pectorales, y empuja la carga hacia arriba hasta que los brazos estén casi extendidos, y luego vuelve a la posición inicial.\r\n        \r\n        Durante todo el movimiento:\r\n        \r\n        1. Mantén los codos hacia afuera para poner el máximo esfuerzo en los pectorales y el mínimo en los deltoides frontales y el tríceps.\r\n		2. Mantén los hombros pegados al banco.', 'Pectorales', 'Mancuernas, banco', 'pressdebancamancuernaplano.jpg', NULL),
 (7, 'Aperturas con mancuernas', 'Tumbado en el banco, con los pies en el suelo, una mancuerna en cada mano. Sujeta las pesas con un agarre neutral, con los brazos extendidos sobre el pecho.\r\n        \r\n        Baja lentamente las mancuernas a los lados en un arco con los brazos hasta sentir un estiramiento en los pectorales. No bajes por debajo del nivel de los hombros. Luego vuelve a la posición original, realizando el mismo arco.\r\n        \r\n        Durante todo el movimiento:\r\n        \r\n        1. Mantén los codos apuntando hacia afuera y ligeramente doblados para reducir la tensión en la articulación.\r\n		2. Mantén los hombros pegados al banco.', 'Pectorales', 'Mancuernas, banco', 'aperturasconmancuerna.jpg', NULL),
-(8, 'Remo con mancuerna a una mano', 'Coloca tu rodilla izquierda y tu mano izquierda en el banco con el pecho paralelo al suelo. Mantén el pie derecho en el suelo y agarra la mancuerna todavía en el suelo con la mano derecha en un agarre neutral.\r\n        \r\n        Manteniendo el brazo cerca del cuerpo, levanta la mancuerna lo más alto posible levantando el codo y manteniendo el antebrazo perpendicular al suelo. Una vez que la serie termine, haz lo mismo con el otro brazo.', 'Espalda', 'Mancuerna, banco', 'remoconmancuerna.jpg', NULL),
+(8, 'Remo con mancuerna a una mano', 'Coloca tu rodilla izquierda y tu mano izquierda en el banco con el pecho paralelo al suelo. Mantén el pie derecho en el suelo y agarra la mancuerna todavía en el suelo con la mano derecha en un agarre neutral.\r\n        \r\n        Manteniendo el brazo cerca del cuerpo, levanta la mancuerna lo más alto posible levantando el codo y manteniendo el antebrazo perpendicular al suelo. Una vez que la serie termine, haz lo mismo con el otro brazo.', 'Espalda', 'Mancuerna, banco', 'remomancuerna.jpg', NULL),
 (9, 'Jalón con agarre ancho', 'Sentado, los muslos bajo las partes acolchadas, la barra agarrada en pronación, las manos más separadas que el ancho de los hombros. Mantén los codos apuntados hacia afuera y la espalda recta.\r\n        \r\n        Tira de la barra hasta llegar a la barbilla. Mantén la contracción por un momento antes de volver lentamente a la posición inicial. Durante el movimiento, no dejes que tus codos se adelanten.', 'Espalda', 'Máquina de jalón, barra', 'jalondeagarreancho.jpg', NULL),
 (10, 'Remo en máquina', 'Sentado en el banco de la máquina con los pies en la cuña. Coge la doble manivela que está unida al cable con ambas manos. Mantén la espalda recta y las rodillas ligeramente flexionadas.\r\n        \r\n        Tira de la carga hacia tu abdomen. Aprieta la espalda al final del movimiento llevando los codos lo más atrás posible. Luego vuelve lentamente a la posición inicial.', 'Espalda', 'Máquina de poleas', 'remoconmaquina.jpg', NULL),
 (11, 'Jalón al pecho con agarre cerrado', 'Sentado, con los muslos bajo las partes acolchadas, la doble asa agarrada con ambas manos. Manteniendo la espalda recta.\r\n        \r\n        Lleva la carga hasta la parte superior del pecho sin apartar los codos del cuerpo. Mantén la contracción por un momento antes de volver lentamente a la posición inicial.', 'Espalda', 'Máquina de jalón, barra', 'jalonalpechoconagarrecerrado.jpg', NULL),
@@ -60,7 +60,7 @@ INSERT INTO `ejercicios` (`id_ejercicio`, `nombre`, `descripcion`, `grupo_muscul
 (16, 'Elevación lateral con mancuernas', 'De pie con los pies separados a la anchura de los hombros, los brazos a lo largo del cuerpo y una mancuerna en cada mano.\r\n        \r\n        Levanta lentamente los brazos de lado hasta una posición horizontal, manteniendo los codos ligeramente doblados. Contrae los deltoides por un momento en la posición alta, y luego vuelve lentamente a la posición inicial.', 'Hombros', 'Mancuernas', 'elevacionlateralmancuernas.jpg', NULL),
 (17, 'Elevación frontal con mancuernas', 'De pie, con los pies separados a la anchura de los hombros, una mancuerna en cada mano (agarre prono).\r\n        \r\n        Levanta lentamente los brazos hacia adelante hasta que estén paralelos al suelo. Contrae los deltoides durante un momento en la posición final, luego regresa lentamente a la posición inicial.', 'Hombros', 'Mancuernas', 'elevacionfrontalmancuernas.jpg', NULL),
 (18, 'Press de hombros en máquina Smith', 'Sentado en un banco con la espalda bien apoyada contra el respaldo. Coloca el banco de manera que la barra caiga justo delante de tu cara. Agarra la barra con las manos en pronación. La espalda bien apoyada contra el respaldo, los codos hacia fuera y los antebrazos perpendiculares al suelo.\r\n        \r\n        Suelta la barra y llévala lentamente a la altura de tu barbilla. Contrae los hombros empujando la carga hacia arriba. Detén el movimiento justo antes de que tus brazos estén completamente extendidos. Luego regresa a la posición baja.', 'Hombros', 'Máquina Smith', 'presshombromaquinasmith.jpg', NULL),
-(19, 'Remo alto con barra', 'De pie, sosteniendo la barra frente a ti, agarre en pronación, manos separadas a la altura de los hombros.\r\n        \r\n        Levanta la barra verticalmente hasta la altura del pecho. Contrae por un momento, luego regresa a la posición inicial. Durante todo el movimiento, mantén la barra cerca del cuerpo y los codos más altos que las muñecas.', 'Hombros, espalda', 'Barra', 'remoaltoconbarra.jpg', NULL),
+(19, 'Remo alto con barra', 'De pie, sosteniendo la barra frente a ti, agarre en pronación, manos separadas a la altura de los hombros.\r\n        \r\n        Levanta la barra verticalmente hasta la altura del pecho. Contrae por un momento, luego regresa a la posición inicial. Durante todo el movimiento, mantén la barra cerca del cuerpo y los codos más altos que las muñecas.', 'Hombros', 'Barra', 'remoaltoconbarra.jpg', NULL),
 (20, 'Elevaciones posteriores para hombros \"Pájaro\"', 'De pie, con las rodillas ligeramente flexionadas, el pecho flexionado hacia adelante, casi paralelo al suelo, manteniendo la espalda recta y la cabeza alineada con la columna. Sostén una mancuerna en cada mano, con las palmas de las manos una frente a la otra.\r\n \r\n Eleva lentamente las mancuernas separándolas de cada lado del cuerpo haciendo un arco con los brazos. Contrae un momento en la posición elevada antes de volver a la posición inicial.', 'Hombros', 'Mancuernas', 'elevacioneshombrospajaro.jpg', NULL),
 (21, 'Elevación lateral con cable a una mano', 'De pie con los pies separados a la anchura de los hombros, el lado izquierdo junto a la polea. El asa en tu mano derecha, contra la parte delantera de tu muslo.\r\n \r\n Levanta lentamente tu brazo hacia el lado en un arco hacia la horizontal. Mantén el codo ligeramente doblado. Permanece en la posición elevada por un momento y luego vuelve lentamente a la posición original.', 'Hombros', 'Máquina de poleas', 'elevacionlateralcableunamano.jpg', NULL),
 (22, 'Curl con barra', 'De pie, con las rodillas ligeramente dobladas y la espalda recta. Sostén la barra con las manos en supinación, a la anchura de los hombros.\r\n        \r\n        Sin mover el pecho, levanta la barra flexionando los antebrazos. Contrae los bíceps en la posición elevada y deja que la barra baje lentamente hasta la posición inicial. Mantén tus codos cerca del cuerpo durante el movimiento.', 'Bíceps', 'Barra', 'curlbarra.jpg', NULL),
@@ -105,6 +105,13 @@ CREATE TABLE `estadisticas` (
   `masa_muscular` decimal(5,2) DEFAULT NULL,
   `id_usuario` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `estadisticas`
+--
+
+INSERT INTO `estadisticas` (`id_estadisticas`, `fecha`, `calorias_quemadas`, `masa_muscular`, `id_usuario`) VALUES
+(1, '2023-05-27', '430.00', '20.00', 1);
 
 -- --------------------------------------------------------
 
@@ -172,13 +179,13 @@ ALTER TABLE `ejercicios`
 -- AUTO_INCREMENT de la tabla `estadisticas`
 --
 ALTER TABLE `estadisticas`
-  MODIFY `id_estadisticas` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_estadisticas` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
