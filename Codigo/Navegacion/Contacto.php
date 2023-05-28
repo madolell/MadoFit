@@ -67,7 +67,7 @@ if (isset($_SESSION["mensaje"])) {
 
             <?php if (isset($_SESSION["nombre"])) { ?>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php $_SESSION["nombre"] ?>
+                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <?php echo $_SESSION["nombre"] ?>
                 </a>
                 <ul class="dropdown-menu text-bg-dark w-100" aria-labelledby="profileDropdown">
                   <li><a class="dropdown-item text-light" href="../usuario/perfil.php">Perfil</a></li>
@@ -75,7 +75,7 @@ if (isset($_SESSION["mensaje"])) {
               <li class="nav-item">
                 <a href="../Auxiliares/logout.php" class="text-decoration-none">
                   <button type="button" class="btn btn-sm btn-outline-danger rounded-3 d-flex align-items-center">
-                    <i class="bi bi-box-arrow-in-right me-1"></i>Cerrar sesion
+                    <i class="bi bi-box-arrow-in-right me-1"></i>Cerrar sesión
                   </button>
                 </a>
               </li>

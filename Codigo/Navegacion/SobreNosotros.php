@@ -75,7 +75,7 @@ if (isset($_SESSION["mensaje"])) {
               <li class="nav-item">
                 <a href="../Auxiliares/logout.php" class="text-decoration-none">
                   <button type="button" class="btn btn-sm btn-outline-danger rounded-3 d-flex align-items-center">
-                    <i class="bi bi-box-arrow-in-right me-1"></i>Cerrar sesion
+                    <i class="bi bi-box-arrow-in-right me-1"></i>Cerrar sesión
                   </button>
                 </a>
               </li>
