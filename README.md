@@ -42,64 +42,66 @@ Se describen de forma concisa los requisitos funcionales de vuestra aplicación.
 ## Requisitos funcionales
 
 Se enumeran todos los requisitos funcionales de vuestra aplicación. Descripción detallada de cada requisito, incluyendo su funcionamiento, validaciones si fuesen necesarias, y cualqier información relevante.
-Registro de usuarios:
+- Registro de usuarios:
 
-Registrar un usuario con datos válidos y asegúrate de que el registro se realice correctamente. Verifica que los datos se guarden correctamente en la base de datos. 
+    - Registrar un usuario con datos válidos y asegúrate de que el registro se realice correctamente. Verifica que los datos se guarden correctamente en la base de datos. 
 Inicia sesión con las credenciales del usuario registrado y luego verificar en la base de datos que los datos están registrados.
 
-Inicio de sesión:
+- Inicio de sesión:
 
-Iniciar sesión con un usuario registrado en la base de datos e introducir las credenciales correctas.
+    - Iniciar sesión con un usuario registrado en la base de datos e introducir las credenciales correctas.
 
-Registros de estadísticas: 
+- Registros de estadísticas: 
 
-Ingresa datos válidos de estadísticas y verificar que se han registrado correctamente en la base de datos
+    - Ingresa datos válidos de estadísticas y verificar que se han registrado correctamente en la base de datos
 
-Soporte multiplataforma:
+- Soporte multiplataforma:
 
-La interfaz de usuario y el diseño deben adaptarse a diferentes tamaños de pantalla y resoluciones con la utilización de tecnologías y frameworks multiplataforma.
+    - La interfaz de usuario y el diseño deben adaptarse a diferentes tamaños de pantalla y resoluciones con la utilización de tecnologías y frameworks multiplataforma.
 
-Instrucciones de entrenamiento:
+- Instrucciones de entrenamiento:
 
-Introducción de datos a la base de datos y programarlo para que se visualice en la página las instrucciones de los ejercicios detalladamente.
+    - Introducción de datos a la base de datos y programarlo para que se visualice en la página las instrucciones de los ejercicios detalladamente.
 
-Restringiendo el acceso a las páginas:
+- Restringiendo el acceso a las páginas:
 
-Los usuarios no autenticados deben ser redirigidos a una página de inicio de sesión cuando intenten acceder a áreas restringidas.
+    - Los usuarios no autenticados deben ser redirigidos a una página de inicio de sesión cuando intenten acceder a áreas restringidas.
 
-Base de datos de ejercicios:
+- Base de datos de ejercicios:
 
-La aplicación debe incluir una base de datos de ejercicios que incluya información detallada sobre cómo realizar cada ejercicio, el equipo necesario y la técnica adecuada.
+    - La aplicación debe incluir una base de datos de ejercicios que incluya información detallada sobre cómo realizar cada ejercicio, el equipo necesario y la técnica adecuada.
 
-Gestión de datos de perfil:
+- Gestión de datos de perfil:
 
-Los usuarios deben poder ver y editar su perfil de usuario, incluyendo información personal como nombre, apellidos, fecha de nacimiento, peso, altura, provincia, etc.
+    - Los usuarios deben poder ver y editar su perfil de usuario, incluyendo información personal como nombre, apellidos, fecha de nacimiento, peso, altura, provincia, etc.
 
-Programas de entrenamiento preestablecidos: 
+- Programas de entrenamiento preestablecidos: 
 
-Incluye programas de entrenamiento preestablecidos con descripción y los ejercicios y series por hacer.
+    - Incluye programas de entrenamiento preestablecidos con descripción y los ejercicios y series por hacer.
 
-Administración de ejercicios:
+- Administración de ejercicios:
 
-El usuario administrador del sitio web debe tener la capacidad de agregar, editar y eliminar ejercicios disponibles en la plataforma.
+    - El usuario administrador del sitio web debe tener la capacidad de agregar, editar y eliminar ejercicios disponibles en la plataforma.
 
-Registro de usuarios: Hecho
-Inicio de sesión: Hecho
-Registros de estadísticas: Hecho
-Soporte multiplataforma: Hecho
-Instrucciones de entrenamiento: Hecho
-Restringiendo el acceso a las páginas: Hecho
-Base de datos de ejercicios: Hecho
-Gestión de datos de perfil: Hecho
-Programas de entrenamiento preestablecidos: Hecho
-Administración de ejercicios: Hecho
+- Registro de usuarios: Hecho
+- Inicio de sesión: Hecho
+- Registros de estadísticas: Hecho
+- Soporte multiplataforma: Hecho
+- Instrucciones de entrenamiento: Hecho
+- Restringiendo el acceso a las páginas: Hecho
+- Base de datos de ejercicios: Hecho
+- Gestión de datos de perfil: Hecho
+- Programas de entrenamiento preestablecidos: Hecho
+- Administración de ejercicios: Hecho
 
 
 # ANÁLISIS Y DISEÑO WEB
 
 ## Guía de estilos
 
-Debemos señalar los colores corporativos y el diseño del logo. Justificando su uso.
+- Colores corporativos
+
+![ArbolDirectorios](Imagenes/Paleta.jpg)
 
 ## Prototipo web y boceto de la estructura
 
