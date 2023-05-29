@@ -113,7 +113,7 @@ Los colores corporativos seleccionados para el proyecto son diferentes tipos de 
 
 ![ArbolDirectorios](Imagenes/Mookup.jpg)
 
-![ArbolDirectorios](Imagenes/Mookup2.jpg)
+![ArbolDirectorios](Imagenes/Mookup2.JPG)
 
 ## Planificación de tareas
 
